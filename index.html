@@ -17,11 +17,21 @@
       color: white;
       text-align: center;
     }
+
+    .glass-panel {
+      background: rgba(0, 0, 0, 0.45); /* semi-transparent dark background */
+      backdrop-filter: blur(6px); /* subtle blur for readability */
+      padding: 20px 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+    }
+
     h1 {
       font-size: 2rem;
       margin-bottom: 20px;
       letter-spacing: 1px;
     }
+
     .links {
       display: flex;
       flex-wrap: wrap;
@@ -29,6 +39,7 @@
       gap: 20px;
       margin-bottom: 30px;
     }
+
     .links a {
       text-decoration: none;
       color: white;
@@ -37,54 +48,63 @@
       align-items: center;
       transition: transform 0.2s ease;
     }
+
     .links a:hover {
       transform: scale(1.1);
     }
+
     .links img {
       width: 80px;
       height: 80px;
       border-radius: 15px;
       margin-bottom: 8px;
     }
+
     hr {
       width: 60%;
       border: 1px solid rgba(255, 255, 255, 0.4);
       margin: 30px auto;
     }
-    .references {
-      margin-top: 10px;
+
+    .references h2 {
+      margin-bottom: 10px;
+      letter-spacing: 1px;
     }
+
     .references a {
       color: #a8d8ff;
       text-decoration: none;
       font-weight: 500;
     }
+
     .references a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>🌐 ChromeHome by HoumyVerse</h1>
+  <div class="glass-panel">
+    <h1>🌐 ChromeHome by HoumyVerse</h1>
 
-  <div class="links">
-    <a href="https://www.midjourney.com/home"><img src="images/midjourney.png" alt="MidJourney"><span>MidJourney</span></a>
-    <a href="https://suno.ai"><img src="images/suno.png" alt="Suno"><span>Suno</span></a>
-    <a href="https://runwayml.com"><img src="images/runway.png" alt="Runway"><span>Runway</span></a>
-    <a href="https://www.capcut.com"><img src="images/capcut.png" alt="CapCut"><span>CapCut</span></a>
-    <a href="https://discord.com"><img src="images/discord.png" alt="Discord"><span>Discord</span></a>
-    <a href="https://github.com"><img src="images/github.png" alt="GitHub"><span>GitHub</span></a>
-    <a href="https://chat.openai.com"><img src="images/chatgpt.png" alt="ChatGPT"><span>ChatGPT</span></a>
-    <a href="https://gemini.google.com"><img src="images/gemini.png" alt="Gemini"><span>Gemini</span></a>
-  </div>
+    <div class="links">
+      <a href="https://www.midjourney.com/home"><img src="images/midjourney.png" alt="MidJourney"><span>MidJourney</span></a>
+      <a href="https://suno.ai"><img src="images/suno.png" alt="Suno"><span>Suno</span></a>
+      <a href="https://runwayml.com"><img src="images/runway.png" alt="Runway"><span>Runway</span></a>
+      <a href="https://www.capcut.com"><img src="images/capcut.png" alt="CapCut"><span>CapCut</span></a>
+      <a href="https://discord.com"><img src="images/discord.png" alt="Discord"><span>Discord</span></a>
+      <a href="https://github.com"><img src="images/github.png" alt="GitHub"><span>GitHub</span></a>
+      <a href="https://chat.openai.com"><img src="images/chatgpt.png" alt="ChatGPT"><span>ChatGPT</span></a>
+      <a href="https://gemini.google.com"><img src="images/gemini.png" alt="Gemini"><span>Gemini</span></a>
+    </div>
 
-  <hr>
+    <hr>
 
-  <div class="references">
-    <h2>📚 REFERENCES</h2>
-    <p><a href="https://docs.midjourney.com/hc/en-us/articles/32859204029709-Parameter-List?utm_source=chatgpt.com" target="_blank">
-      Midjourney Parameter List (Official)
-    </a></p>
+    <div class="references">
+      <h2>📚 REFERENCES</h2>
+      <p><a href="https://docs.midjourney.com/hc/en-us/articles/32859204029709-Parameter-List?utm_source=chatgpt.com" target="_blank">
+        Midjourney Parameter List (Official)
+      </a></p>
+    </div>
   </div>
 </body>
 </html>
