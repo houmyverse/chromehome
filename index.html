@@ -24,6 +24,7 @@
       padding: 25px 50px;
       border-radius: 20px;
       box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+      max-width: 1000px;
     }
 
     h1 {
@@ -67,26 +68,46 @@
     }
 
     .references h2 {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       letter-spacing: 1px;
     }
 
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    td {
+      vertical-align: top;
+      text-align: left;
+      padding: 10px 20px;
+      width: 33%;
+    }
+
     .references h3 {
-      margin-top: 15px;
-      margin-bottom: 8px;
       font-size: 1rem;
       color: #a8d8ff;
-      letter-spacing: 0.5px;
+      margin-bottom: 8px;
     }
 
     .references a {
       color: #a8d8ff;
       text-decoration: none;
       font-weight: 500;
+      display: block;
+      margin-bottom: 6px;
     }
 
     .references a:hover {
       text-decoration: underline;
+    }
+
+    @media (max-width: 800px) {
+      td {
+        width: 100%;
+        display: block;
+      }
     }
   </style>
 </head>
@@ -109,27 +130,59 @@
 
     <div class="references">
       <h2>📚 REFERENCES</h2>
+      <table>
+        <tr>
+          <td>
+            <h3>🎨 Midjourney</h3>
+            <a href="https://docs.midjourney.com/hc/en-us/articles/32859204029709-Parameter-List?utm_source=chatgpt.com" target="_blank">
+              Parameter List (Official)
+            </a>
+          </td>
 
-      <h3>🎨 Midjourney</h3>
-      <p><a href="https://docs.midjourney.com/hc/en-us/articles/32859204029709-Parameter-List?utm_source=chatgpt.com" target="_blank">
-        Midjourney Parameter List (Official)
-      </a></p>
+          <td>
+            <h3>🎬 Runway</h3>
+            <a href="https://help.runwayml.com/hc/en-us/articles/37053594806419-Creating-with-Gen-4-Image" target="_blank">
+              Creating with Gen-4 Image
+            </a>
+            <a href="https://academy.runwayml.com/gen4/gen4-references" target="_blank">
+              Gen-4 Reference Guide
+            </a>
+          </td>
 
-      <h3>🎬 Runway</h3>
-      <p><a href="https://help.runwayml.com/hc/en-us/articles/37053594806419-Creating-with-Gen-4-Image" target="_blank">
-        Creating with Gen-4 Image
-      </a></p>
-      <p><a href="https://academy.runwayml.com/gen4/gen4-references" target="_blank">
-        Gen-4 Reference Guide
-      </a></p>
+          <td>
+            <h3>🎵 Suno</h3>
+            <a href="https://sunoaiwiki.com/resources/2024-05-13-list-of-metatags/" target="_blank">
+              List of Suno Meta Tags
+            </a>
+            <a href="https://help.suno.com/en/articles/2477633" target="_blank">
+              How to Use Upload Audio
+            </a>
+          </td>
+        </tr>
 
-      <h3>🎵 Suno</h3>
-      <p><a href="https://sunoaiwiki.com/resources/2024-05-13-list-of-metatags/" target="_blank">
-        List of Suno Meta Tags
-      </a></p>
-      <p><a href="https://help.suno.com/en/articles/2477633" target="_blank">
-        How to Use Upload Audio (Help Center)
-      </a></p>
+        <tr>
+          <td>
+            <h3>🎥 CapCut</h3>
+            <a href="https://support.capcut.com" target="_blank">Help Center (Official)</a>
+            <a href="https://www.capcut.com/creative-suite" target="_blank">Creative Suite Overview</a>
+            <a href="https://learn.capcut.com/ai-tools/" target="_blank">AI Tools Overview</a>
+          </td>
+
+          <td>
+            <h3>💡 AI Tools & Learning</h3>
+            <a href="https://learnprompting.org/" target="_blank">Learn Prompt Engineering</a>
+            <a href="https://ai.google.dev/gemini-api/docs" target="_blank">Gemini Developer Docs</a>
+            <a href="https://platform.openai.com/docs" target="_blank">OpenAI Platform Docs</a>
+          </td>
+
+          <td>
+            <h3>🧠 Other Resources</h3>
+            <a href="https://creatorimpact.com/wp-content/uploads/2024/03/Midjourney-Cheat-Sheet-Updated-Mar2024.pdf" target="_blank">MJ Cheat Sheet (PDF)</a>
+            <a href="https://www.runwayml.com/blog/" target="_blank">Runway Blog</a>
+            <a href="https://www.suno.com/blog" target="_blank">Suno Blog</a>
+          </td>
+        </tr>
+      </table>
     </div>
   </div>
 </body>
