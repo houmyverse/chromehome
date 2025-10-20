@@ -2,220 +2,274 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EzzyVerse Quick Links</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ChromeHome by HoumyVerse</title>
   <style>
-    body {
+    :root {
+      --glass-bg: rgba(0,0,0,.45);
+      --link: #a8d8ff;
+    }
+
+    html, body {
       margin: 0;
       padding: 0;
-      background: url("images/background.jpg") no-repeat center center fixed;
-      background-size: cover;
-      font-family: "Poppins", Arial, sans-serif;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: #fff;
+      background: url('images/background.jpg') no-repeat center/cover fixed;
+    }
+
+    body {
+      min-height: 100dvh;
+      overflow-y: auto;
+    }
+
+    /* Container */
+    .page {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .glass-panel {
+      background: var(--glass-bg);
       backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 28px 36px;
+      border-radius: 20px;
+      box-shadow: 0 4px 25px rgba(0,0,0,.4);
+      max-width: 1000px;
+      width: 100%;
     }
 
     h1 {
-      color: white;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.6);
-      margin-top: 50px;
-      margin-bottom: 25px;
-      font-weight: 600;
-      letter-spacing: 1px;
+      margin: 0 0 18px;
+      font-size: 2rem;
+      text-align: center;
+      letter-spacing: .5px;
     }
 
-    /* Search Bar */
-    .search-container {
-      width: 80%;
-      max-width: 500px;
-      margin-bottom: 40px;
+    /* --- Search Bar --- */
+    .search-bar {
       display: flex;
       justify-content: center;
+      margin: 0 auto 28px;
+      width: 100%;
+      max-width: 500px;
     }
 
-    .search-container form {
-      width: 100%;
+    .search-bar form {
       display: flex;
-      background: rgba(255, 255, 255, 0.12);
+      width: 100%;
       border-radius: 50px;
+      background: rgba(255,255,255,0.12);
+      box-shadow: 0 0 10px rgba(255,255,255,0.15), inset 0 0 6px rgba(255,255,255,0.25);
+      backdrop-filter: blur(8px);
       overflow: hidden;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.15),
-                  inset 0 0 6px rgba(255, 255, 255, 0.25);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255,255,255,0.3);
       transition: box-shadow 0.3s ease, border-color 0.3s ease;
     }
 
-    .search-container form:hover {
-      box-shadow: 0 0 18px rgba(255, 255, 255, 0.35),
-                  inset 0 0 8px rgba(255, 255, 255, 0.25);
-      border-color: rgba(255, 255, 255, 0.5);
+    .search-bar form:hover {
+      box-shadow: 0 0 14px rgba(255,255,255,0.35), inset 0 0 8px rgba(255,255,255,0.25);
+      border-color: rgba(255,255,255,0.5);
     }
 
-    .search-container input[type="text"] {
+    .search-bar input[type="text"] {
       flex: 1;
-      padding: 12px 20px;
+      padding: 10px 18px;
       font-size: 1rem;
-      color: white;
+      color: #fff;
       background: transparent;
       border: none;
       outline: none;
     }
 
-    .search-container input::placeholder {
-      color: rgba(255, 255, 255, 0.7);
+    .search-bar input::placeholder {
+      color: rgba(255,255,255,0.7);
     }
 
-    .search-container button {
-      padding: 0 22px;
+    .search-bar button {
+      padding: 0 20px;
+      background: rgba(255,255,255,0.15);
       border: none;
-      background: rgba(255, 255, 255, 0.15);
-      color: white;
+      color: #fff;
       font-size: 1.1rem;
       cursor: pointer;
       transition: background 0.3s ease, transform 0.2s ease;
     }
 
-    .search-container button:hover {
-      background: rgba(255, 255, 255, 0.3);
-      transform: scale(1.1);
+    .search-bar button:hover {
+      background: rgba(255,255,255,0.3);
+      transform: scale(1.08);
     }
 
-    /* Links Grid */
-    .link-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 30px;
-      width: 80%;
-      max-width: 800px;
-      margin-bottom: 60px;
+    /* Icon links */
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      margin: 0 0 26px;
     }
 
-    .link-item {
-      text-align: center;
-      transition: transform 0.3s ease, filter 0.3s ease;
-    }
-
-    .link-item:hover {
-      transform: scale(1.1);
-      filter: brightness(1.2);
-    }
-
-    .link-item img {
-      width: 100px;
-      height: 100px;
-      object-fit: contain;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-    }
-
-    .link-item span {
-      display: block;
-      margin-top: 10px;
-      color: #fff;
-      font-size: 1rem;
-      font-weight: 500;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-    }
-
-    /* Reference Table */
-    .reference-table {
-      width: 85%;
-      max-width: 900px;
-      margin-bottom: 60px;
-      border-collapse: collapse;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      overflow: hidden;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 12px rgba(0,0,0,0.3);
-    }
-
-    .reference-table th {
-      background: rgba(255, 255, 255, 0.12);
-      color: #fff;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 12px;
-      text-align: center;
-    }
-
-    .reference-table td {
-      padding: 10px 15px;
-      color: rgba(255,255,255,0.9);
-      text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .reference-table a {
-      color: #fff;
+    .links a {
       text-decoration: none;
-      transition: color 0.3s ease;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform .18s ease;
+      width: 96px;
     }
 
-    .reference-table a:hover {
-      color: #9cf;
+    .links a:hover { transform: scale(1.06); }
+    .links img {
+      width: 72px; height: 72px;
+      border-radius: 14px;
+      margin-bottom: 8px;
     }
 
-    footer {
-      color: rgba(255,255,255,0.7);
-      font-size: 0.8rem;
-      margin-bottom: 20px;
+    hr {
+      width: 90%;
+      max-width: 720px;
+      border: 1px solid rgba(255,255,255,.35);
+      margin: 22px auto;
+    }
+
+    /* References */
+    .references h2 {
+      margin: 0 0 12px;
+      letter-spacing: .6px;
+      text-align: center;
+    }
+
+    .references h3 {
+      font-size: 1rem;
+      color: var(--link);
+      margin: 12px 0 8px;
+      letter-spacing: .3px;
+    }
+
+    .references a {
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .references a:hover { text-decoration: underline; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 6px;
+    }
+
+    td {
+      vertical-align: top;
+      text-align: left;
+      padding: 8px 18px;
+      width: 33.33%;
+    }
+
+    td a {
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    /* --- Desktop centering --- */
+    @media (min-width: 1024px) {
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .page {
+        padding: 40px 0;
+      }
+    }
+
+    /* --- Mobile adjustments --- */
+    @media (max-width: 720px) {
+      .glass-panel {
+        padding: 18px;
+        border-radius: 16px;
+      }
+      h1 { font-size: 1.4rem; }
+      .links a { width: 78px; }
+      .links img { width: 58px; height: 58px; border-radius: 12px; }
+      td { display: block; width: 100%; padding: 8px 0; }
+      hr { width: 100%; }
     }
   </style>
 </head>
 <body>
-  <h1>EzzyVerse Quick Links</h1>
+  <div class="page">
+    <div class="glass-panel">
+      <h1>🌐 ChromeHome by HoumyVerse</h1>
 
-  <!-- Google Search -->
-  <div class="search-container">
-    <form action="https://www.google.com/search" method="GET">
-      <input type="text" name="q" placeholder="Search Google..." />
-      <button type="submit">🔍</button>
-    </form>
+      <!-- Google Search -->
+      <div class="search-bar">
+        <form action="https://www.google.com/search" method="GET">
+          <input type="text" name="q" placeholder="Search Google..." />
+          <button type="submit">🔍</button>
+        </form>
+      </div>
+
+      <div class="links">
+        <a href="https://www.midjourney.com/home"><img src="images/midjourney.png" alt="MidJourney"><span>MidJourney</span></a>
+        <a href="https://suno.ai"><img src="images/suno.png" alt="Suno"><span>Suno</span></a>
+        <a href="https://runwayml.com"><img src="images/runway.png" alt="Runway"><span>Runway</span></a>
+        <a href="https://www.capcut.com"><img src="images/capcut.png" alt="CapCut"><span>CapCut</span></a>
+        <a href="https://discord.com"><img src="images/discord.png" alt="Discord"><span>Discord</span></a>
+        <a href="https://github.com"><img src="images/github.png" alt="GitHub"><span>GitHub</span></a>
+        <a href="https://chat.openai.com"><img src="images/chatgpt.png" alt="ChatGPT"><span>ChatGPT</span></a>
+        <a href="https://gemini.google.com"><img src="images/gemini.png" alt="Gemini"><span>Gemini</span></a>
+      </div>
+
+      <hr>
+
+      <div class="references">
+        <h2>📚 REFERENCES</h2>
+        <table>
+          <tr>
+            <td>
+              <h3>🎨 Midjourney</h3>
+              <a href="https://docs.midjourney.com/hc/en-us/articles/32859204029709-Parameter-List" target="_blank">Parameter List (Official)</a>
+            </td>
+            <td>
+              <h3>🎬 Runway</h3>
+              <a href="https://help.runwayml.com/hc/en-us/articles/37053594806419-Creating-with-Gen-4-Image" target="_blank">Creating with Gen-4 Image</a><br>
+              <a href="https://academy.runwayml.com/gen4/gen4-references" target="_blank">Gen-4 Reference Guide</a>
+            </td>
+            <td>
+              <h3>🎵 Suno</h3>
+              <a href="https://sunoaiwiki.com/resources/2024-05-13-list-of-metatags/" target="_blank">List of Meta Tags</a><br>
+              <a href="https://help.suno.com/en/articles/2477633" target="_blank">Upload Audio Guide</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h3>🎥 CapCut</h3>
+              <a href="https://support.capcut.com" target="_blank">Help Center (Official)</a><br>
+              <a href="https://www.capcut.com/creative-suite" target="_blank">Creative Suite Overview</a><br>
+              <a href="https://learn.capcut.com/ai-tools/" target="_blank">AI Tools Overview</a>
+            </td>
+            <td>
+              <h3>💡 AI Tools & Learning</h3>
+              <a href="https://learnprompting.org/" target="_blank">Learn Prompt Engineering</a><br>
+              <a href="https://ai.google.dev/gemini-api/docs" target="_blank">Gemini API Docs</a><br>
+              <a href="https://platform.openai.com/docs" target="_blank">OpenAI Platform Docs</a>
+            </td>
+            <td>
+              <h3>🧠 Other Resources</h3>
+              <a href="https://creatorimpact.com/wp-content/uploads/2024/03/Midjourney-Cheat-Sheet-Updated-Mar2024.pdf" target="_blank">MJ Cheat Sheet (PDF)</a><br>
+              <a href="https://www.runwayml.com/blog/" target="_blank">Runway Blog</a><br>
+              <a href="https://www.suno.com/blog" target="_blank">Suno Blog</a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
-
-  <!-- Main Icon Links -->
-  <div class="link-grid">
-    <a class="link-item" href="https://www.midjourney.com"><img src="images/midjourney.png" alt="MidJourney" /><span>MidJourney</span></a>
-    <a class="link-item" href="https://www.suno.ai"><img src="images/suno.png" alt="Suno" /><span>Suno</span></a>
-    <a class="link-item" href="https://www.runwayml.com"><img src="images/runway.png" alt="Runway" /><span>Runway</span></a>
-    <a class="link-item" href="https://www.capcut.com"><img src="images/capcut.png" alt="CapCut" /><span>CapCut</span></a>
-    <a class="link-item" href="https://discord.com"><img src="images/discord.png" alt="Discord" /><span>Discord</span></a>
-    <a class="link-item" href="https://github.com"><img src="images/github.png" alt="GitHub" /><span>GitHub</span></a>
-    <a class="link-item" href="https://chat.openai.com"><img src="images/chatgpt.png" alt="ChatGPT" /><span>ChatGPT</span></a>
-    <a class="link-item" href="https://gemini.google.com"><img src="images/gemini.png" alt="Gemini" /><span>Gemini</span></a>
-  </div>
-
-  <!-- Reference Table -->
-  <table class="reference-table">
-    <tr>
-      <th>Creative Tools</th>
-      <th>AI Tools & Learning</th>
-      <th>Other Resources</th>
-    </tr>
-    <tr>
-      <td><a href="https://www.midjourney.com">MidJourney</a></td>
-      <td><a href="https://chat.openai.com">ChatGPT</a></td>
-      <td><a href="https://www.github.com">GitHub</a></td>
-    </tr>
-    <tr>
-      <td><a href="https://www.runwayml.com">Runway</a></td>
-      <td><a href="https://gemini.google.com">Gemini</a></td>
-      <td><a href="https://www.discord.com">Discord</a></td>
-    </tr>
-    <tr>
-      <td><a href="https://www.suno.ai">Suno</a></td>
-      <td><a href="https://www.capcut.com">CapCut</a></td>
-      <td><a href="https://www.google.com">Google</a></td>
-    </tr>
-  </table>
-
-  <footer>© 2025 EzzyVerse</footer>
 </body>
 </html>
