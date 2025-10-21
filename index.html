@@ -15,7 +15,7 @@
       padding: 0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: #fff;
-      background: url('images/background.png') no-repeat center/cover fixed;
+      background: url('images/background.jpg') no-repeat center/cover fixed;
     }
 
     body {
@@ -23,7 +23,6 @@
       overflow-y: auto;
     }
 
-    /* Container */
     .page {
       display: flex;
       justify-content: center;
@@ -48,11 +47,10 @@
       letter-spacing: .5px;
     }
 
-    /* --- Google CSE Container --- */
+    /* --- Google Search --- */
     .search-bar {
       display: flex;
       justify-content: center;
-      align-items: center;
       width: 100%;
       margin: 0 auto 28px;
       padding: 8px 0;
@@ -63,8 +61,7 @@
       border: 1px solid rgba(255,255,255,0.3);
     }
 
-    /* make embedded search fit nicely */
-    .gcse-search {
+    .gcse-searchbox-only {
       width: 90%;
       max-width: 500px;
     }
@@ -89,6 +86,7 @@
     }
 
     .links a:hover { transform: scale(1.06); }
+
     .links img {
       width: 72px; height: 72px;
       border-radius: 14px;
@@ -102,7 +100,6 @@
       margin: 22px auto;
     }
 
-    /* References */
     .references h2 {
       margin: 0 0 12px;
       letter-spacing: .6px;
@@ -142,30 +139,19 @@
       margin-bottom: 6px;
     }
 
-    /* --- Desktop centering --- */
     @media (min-width: 1024px) {
-      body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .page {
-        padding: 40px 0;
-      }
+      body { display: flex; align-items: center; justify-content: center; }
+      .page { padding: 40px 0; }
     }
 
-    /* --- Mobile adjustments --- */
     @media (max-width: 720px) {
-      .glass-panel {
-        padding: 18px;
-        border-radius: 16px;
-      }
+      .glass-panel { padding: 18px; border-radius: 16px; }
       h1 { font-size: 1.4rem; }
       .links a { width: 78px; }
       .links img { width: 58px; height: 58px; border-radius: 12px; }
       td { display: block; width: 100%; padding: 8px 0; }
       hr { width: 100%; }
-      .gcse-search { width: 100%; }
+      .gcse-searchbox-only { width: 100%; }
     }
   </style>
 </head>
@@ -174,10 +160,15 @@
     <div class="glass-panel">
       <h1>🌐 ChromeHome by HoumyVerse</h1>
 
-      <!-- Google Programmable Search (Autocomplete Enabled) -->
+      <!-- Google Searchbox Only (Autocomplete + Redirects to Google) -->
       <div class="search-bar">
         <script async src="https://cse.google.com/cse.js?cx=6186b120926404782"></script>
-        <div class="gcse-search"></div>
+        <div class="gcse-searchbox-only"
+             data-enableAutoComplete="true"
+             data-newWindow="false"
+             data-autoCompleteMaxCompletions="8"
+             data-redirectUrl="https://www.google.com/search">
+        </div>
       </div>
 
       <div class="links">
